@@ -24,8 +24,8 @@ get_certificate() {
       cat /etc/letsencrypt/live/$d/fullchain.pem /etc/letsencrypt/live/$d/privkey.pem > /certs/$d.pem
     else
       # keep full chain and private key in separate files (e.g. for nginx and apache)
-      cp /etc/letsencrypt/live/$d/fullchain.pem /certs/$d.pem
-      cp /etc/letsencrypt/live/$d/privkey.pem /certs/$d.key
+      cp /etc/letsencrypt/live/$d/fullchain.pem /certs/$d/fullchain.pem
+      cp /etc/letsencrypt/live/$d/privkey.pem /certs/$d/privkey.pem
     fi
     echo "Certificate obtained for $CERT_DOMAINS! Your new certificate - named $d - is in /certs"
   else
