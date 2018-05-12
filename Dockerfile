@@ -1,5 +1,5 @@
 FROM python:2-alpine
-MAINTAINER Henri Dwyer <henri@dwyer.io>
+MAINTAINER Anish Patel <https://github.com/anishpateluk/>
 
 VOLUME /certs
 VOLUME /etc/letsencrypt
