@@ -24,6 +24,7 @@ get_certificate() {
       cat /etc/letsencrypt/live/$d/fullchain.pem /etc/letsencrypt/live/$d/privkey.pem > /certs/$d.pem
     else
       # keep full chain and private key in separate files (e.g. for nginx and apache)
+      mkdir -p /certs/$d
       cp -L /etc/letsencrypt/live/$d/fullchain.pem /certs/$d/fullchain.pem
       cp -L /etc/letsencrypt/live/$d/privkey.pem /certs/$d/privkey.pem
     fi
